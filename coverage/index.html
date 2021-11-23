@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-11-23T17:58:58+01:00">2021-11-23T17:58:58+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-11-23T19:14:43+01:00">2021-11-23T19:14:43+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  44.0%
+  58.82%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.64
+       <span class="green">
+         1.15
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>25</b> relevant lines,
-    <span class="green"><b>11</b> lines covered</span> and
+    <b>34</b> relevant lines,
+    <span class="green"><b>20</b> lines covered</span> and
     <span class="red"><b>14</b> lines missed. </span>
     (<span class="red">
-  44.0%
+  58.82%
 </span>
 )
   </div>
@@ -95,11 +95,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#151996a13ec1efc1394f87426f28f5044d7dced6" class="src_link" title="app/controllers/api/movies_controller.rb">app/controllers/api/movies_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">6</td>
+            <td class="cell--number">26</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">15</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.83</td>
+            <td class="cell--number">2.27</td>
             
           </tr>
         
@@ -177,7 +177,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.71
+         2.19
        </span>
     </span> hits/line
     )
@@ -190,8 +190,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>7</b> relevant lines,
-    <span class="green"><b>7</b> lines covered</span> and
+    <b>16</b> relevant lines,
+    <span class="green"><b>16</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -220,11 +220,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#151996a13ec1efc1394f87426f28f5044d7dced6" class="src_link" title="app/controllers/api/movies_controller.rb">app/controllers/api/movies_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">6</td>
+            <td class="cell--number">26</td>
+            <td class="cell--number">15</td>
+            <td class="cell--number">15</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.83</td>
+            <td class="cell--number">2.27</td>
             
           </tr>
         
@@ -833,8 +833,8 @@
     
 
     <div class="t-line-summary">
-      <b>6</b> relevant lines.
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>15</b> relevant lines.
+      <span class="green"><b>15</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -951,12 +951,177 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def create</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="12">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    movie = Movie.new(movie_params)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="13">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    movie.save</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="14">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    if movie.persisted?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="15">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      render json: { message: &#39;Movie created successfully&#39; }, status: 201</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">    else</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="17">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">      render json: { error: movie.errors.full_messages.join(&#39;, &#39;) }, status: 422</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def movie_params</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="24">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    params.require(:movie).permit(:title, :genre, :year, :description, :image)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 
