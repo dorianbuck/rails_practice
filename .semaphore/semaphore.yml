@@ -8,10 +8,12 @@ blocks:
   - name: Test
     task:
       env_vars:
+        - name: DATABASE_URL
+          value: 'postgresql://postgres:@0.0.0.0:5432/myapp_test'
         - name: RAILS_ENV
           value: test
         - name: CC_TEST_REPORTER_ID
-          value: c2ae5448f1d759740469b2bcfa124646a32b05a2e1b2c7394ced2af5c5ede05d
+          value: 1a451d377f95f364cf0211bb8ecab2bf93a0b0018a96d1cfa49c47e9476dd78f
       jobs:
         - name: Test
           commands:
@@ -35,3 +37,4 @@ blocks:
         on_fail:
           commands:
             - ./cc-test-reporter after-build --exit-code 1
+            - echo "run 3/3"
