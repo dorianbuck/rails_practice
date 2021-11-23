@@ -7,4 +7,5 @@ class Api::MoviesController < ApplicationController
       render json: { error: 'No movies found' }, status: 404
     end
   end
+  
 end
