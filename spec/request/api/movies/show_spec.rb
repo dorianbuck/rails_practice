@@ -1,8 +1,7 @@
-RSpec.describe 'GET /api/movies', type: :request do
+RSpec.describe 'GET /api/movie/:id', type: :request do
   subject { response }
-  describe 'when movies is returned' do
-    let!(:movies) do
-      create_list(:movie, 3)
+  describe 'when movie is returned' do
+    let!(:movie) do
       create(:movie, title: 'title',
                      genre: 'horror',
                      year: '2022-01-01',
@@ -10,18 +9,18 @@ RSpec.describe 'GET /api/movies', type: :request do
                      image: 'placeholder')
     end
     before do
-      get '/api/movies'
+      get "/api/movies/#{movie.id}"
     end
     it { is_expected.to have_http_status 200 }
   end
 
-  describe 'when no movies are returned' do
+  describe 'when movie is not returned' do
     before do
-      get '/api/movies'
+      get '/api/movies/0'
     end
     it { is_expected.to have_http_status 404 }
     it('returns an error message') do
-      expect(response.body).to match(/No movies found/)
+      expect(response_json['error']).to eq('Movie not found')
     end
   end
 end

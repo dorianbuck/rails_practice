@@ -18,6 +18,15 @@ class Api::MoviesController < ApplicationController
     end
   end
 
+  def show
+    movie = Movie.find_by(id: params[:id])
+    if movie
+      render json: { movie: movie }
+    else
+      render json: { error: 'Movie not found' }, status: 404
+    end
+  end
+
   private
 
   def movie_params
