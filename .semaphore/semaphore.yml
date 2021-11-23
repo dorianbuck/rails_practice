@@ -5,13 +5,15 @@ agent:
     type: e1-standard-2
     os_image: ubuntu2004
 blocks:
-  - name: Test22
+  - name: Test
     task:
       env_vars:
+       - name: DATABASE_URL
+          value: 'postgresql://postgres:@0.0.0.0:5432/myapp_test'
+        - name: RAILS_ENV
+          value: test
         - name: CC_TEST_REPORTER_ID
           value: c2ae5448f1d759740469b2bcfa124646a32b05a2e1b2c7394ced2af5c5ede05d
-        - name: DATABASE_URL
-          value: ' - name: DATABASE_URL           value: ''postgresql://postgres:@0.0.0.0:5432/test22'''
       jobs:
         - name: Test
           commands:
