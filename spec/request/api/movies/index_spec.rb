@@ -16,5 +16,8 @@ RSpec.describe 'GET /api/movies', type: :request do
       get '/api/movies'
     end
     it { is_expected.to have_http_status 404 }
+    it ('returns an error message') do
+      expect(response.body).to match(/No movies found/)
+    end
   end
 end
